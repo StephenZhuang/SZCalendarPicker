@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SZCalendarPicker.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (IBAction)showAction:(id)sender
+{
+    SZCalendarPicker *calendarPicker = [SZCalendarPicker showOnView:self.view];
+    calendarPicker.today = [NSDate date];
+    calendarPicker.date = calendarPicker.today;
+    calendarPicker.frame = CGRectMake(0, 100, self.view.frame.size.width, 352);
+    calendarPicker.calendarBlock = ^(NSInteger day, NSInteger month, NSInteger year){
+        
+        NSLog(@"%i-%i-%i", year,month,day);
+    };
 }
 
 - (void)didReceiveMemoryWarning {

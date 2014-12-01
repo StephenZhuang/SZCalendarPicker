@@ -14,6 +14,12 @@
 		77B46C071A2BFE710057750C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B46C061A2BFE710057750C /* Images.xcassets */; };
 		77B46C0A1A2BFE710057750C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B46C081A2BFE710057750C /* LaunchScreen.xib */; };
 		77B46C161A2BFE710057750C /* SZCalendarPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B46C151A2BFE710057750C /* SZCalendarPickerTests.m */; };
+		77B46C2B1A2C06280057750C /* bt_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B46C261A2C06280057750C /* bt_next@2x.png */; };
+		77B46C2C1A2C06280057750C /* bt_previous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B46C271A2C06280057750C /* bt_previous@2x.png */; };
+		77B46C2D1A2C06280057750C /* SZCalendarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B46C291A2C06280057750C /* SZCalendarPicker.m */; };
+		77B46C2E1A2C06280057750C /* SZCalendarPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B46C2A1A2C06280057750C /* SZCalendarPicker.xib */; };
+		77B46C311A2C07610057750C /* SZCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B46C301A2C07610057750C /* SZCalendarCell.m */; };
+		77B46C361A2C0FF40057750C /* UIColor+ZXLazy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B46C351A2C0FF40057750C /* UIColor+ZXLazy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,15 @@
 		77B46C0F1A2BFE710057750C /* SZCalendarPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SZCalendarPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B46C141A2BFE710057750C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77B46C151A2BFE710057750C /* SZCalendarPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZCalendarPickerTests.m; sourceTree = "<group>"; };
+		77B46C261A2C06280057750C /* bt_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_next@2x.png"; sourceTree = "<group>"; };
+		77B46C271A2C06280057750C /* bt_previous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_previous@2x.png"; sourceTree = "<group>"; };
+		77B46C281A2C06280057750C /* SZCalendarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCalendarPicker.h; sourceTree = "<group>"; };
+		77B46C291A2C06280057750C /* SZCalendarPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCalendarPicker.m; sourceTree = "<group>"; };
+		77B46C2A1A2C06280057750C /* SZCalendarPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZCalendarPicker.xib; sourceTree = "<group>"; };
+		77B46C2F1A2C07610057750C /* SZCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCalendarCell.h; sourceTree = "<group>"; };
+		77B46C301A2C07610057750C /* SZCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCalendarCell.m; sourceTree = "<group>"; };
+		77B46C341A2C0FF40057750C /* UIColor+ZXLazy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZXLazy.h"; sourceTree = "<group>"; };
+		77B46C351A2C0FF40057750C /* UIColor+ZXLazy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZXLazy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +96,7 @@
 		77B46BF81A2BFE710057750C /* SZCalendarPicker */ = {
 			isa = PBXGroup;
 			children = (
+				77B46C241A2C06280057750C /* Class */,
 				77B46BFD1A2BFE710057750C /* AppDelegate.h */,
 				77B46BFE1A2BFE710057750C /* AppDelegate.m */,
 				77B46C001A2BFE710057750C /* ViewController.h */,
@@ -117,6 +133,30 @@
 				77B46C141A2BFE710057750C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77B46C241A2C06280057750C /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				77B46C341A2C0FF40057750C /* UIColor+ZXLazy.h */,
+				77B46C351A2C0FF40057750C /* UIColor+ZXLazy.m */,
+				77B46C251A2C06280057750C /* Resource */,
+				77B46C281A2C06280057750C /* SZCalendarPicker.h */,
+				77B46C291A2C06280057750C /* SZCalendarPicker.m */,
+				77B46C2A1A2C06280057750C /* SZCalendarPicker.xib */,
+				77B46C2F1A2C07610057750C /* SZCalendarCell.h */,
+				77B46C301A2C07610057750C /* SZCalendarCell.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		77B46C251A2C06280057750C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				77B46C261A2C06280057750C /* bt_next@2x.png */,
+				77B46C271A2C06280057750C /* bt_previous@2x.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +239,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B46C2C1A2C06280057750C /* bt_previous@2x.png in Resources */,
 				77B46C051A2BFE710057750C /* Main.storyboard in Resources */,
 				77B46C0A1A2BFE710057750C /* LaunchScreen.xib in Resources */,
 				77B46C071A2BFE710057750C /* Images.xcassets in Resources */,
+				77B46C2E1A2C06280057750C /* SZCalendarPicker.xib in Resources */,
+				77B46C2B1A2C06280057750C /* bt_next@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +262,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B46C311A2C07610057750C /* SZCalendarCell.m in Sources */,
 				77B46C021A2BFE710057750C /* ViewController.m in Sources */,
 				77B46BFF1A2BFE710057750C /* AppDelegate.m in Sources */,
+				77B46C361A2C0FF40057750C /* UIColor+ZXLazy.m in Sources */,
+				77B46C2D1A2C06280057750C /* SZCalendarPicker.m in Sources */,
 				77B46BFC1A2BFE710057750C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +458,7 @@
 				77B46C1B1A2BFE710057750C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77B46C1C1A2BFE710057750C /* Build configuration list for PBXNativeTarget "SZCalendarPickerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +467,7 @@
 				77B46C1E1A2BFE710057750C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
