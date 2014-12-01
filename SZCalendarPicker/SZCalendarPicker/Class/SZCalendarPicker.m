@@ -81,7 +81,6 @@ NSString *const SZCalendarCellIdentifier = @"cell";
 
 
 - (NSInteger)firstWeekdayInThisMonth:(NSDate *)date{
-    //    NSCalendar *calendar2 = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     [calendar setFirstWeekday:1];//1.Sun. 2.Mon. 3.Thes. 4.Wed. 5.Thur. 6.Fri. 7.Sat.
