@@ -27,4 +27,4 @@ usage
 THX
 ---
 ---
-[@nathanwhy](https://github.com/nathanwhy)] and his demo [HYCalendar](https://github.com/nathanwhy/HYCalendar)
+[@nathanwhy](https://github.com/nathanwhy) and his demo [HYCalendar](https://github.com/nathanwhy/HYCalendar)
