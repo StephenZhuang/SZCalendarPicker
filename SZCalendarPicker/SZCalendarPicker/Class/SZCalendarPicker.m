@@ -12,6 +12,15 @@
 
 NSString *const SZCalendarCellIdentifier = @"cell";
 
+@interface SZCalendarPicker ()
+@property (nonatomic , weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic , weak) IBOutlet UILabel *monthLabel;
+@property (nonatomic , weak) IBOutlet UIButton *previousButton;
+@property (nonatomic , weak) IBOutlet UIButton *nextButton;
+@property (nonatomic , strong) NSArray *weekDayArray;
+@property (nonatomic , strong) UIView *mask;
+@end
+
 @implementation SZCalendarPicker
 
 
