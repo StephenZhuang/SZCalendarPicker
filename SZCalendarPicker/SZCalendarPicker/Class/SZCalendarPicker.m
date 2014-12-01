@@ -19,7 +19,9 @@ NSString *const SZCalendarCellIdentifier = @"cell";
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    [self customInterface];
+    [self addTap];
+    [self addSwipe];
+    [self show];
 }
 
 - (void)awakeFromNib
@@ -151,6 +153,8 @@ NSString *const SZCalendarCellIdentifier = @"cell";
                 } else if (day > [self day:_date]) {
                     [cell.dateLabel setTextColor:[UIColor colorWithHexString:@"#cbcbcb"]];
                 }
+            } else if ([_today compare:_date] == NSOrderedAscending) {
+                [cell.dateLabel setTextColor:[UIColor colorWithHexString:@"#cbcbcb"]];
             }
         }
     }
@@ -224,13 +228,18 @@ NSString *const SZCalendarCellIdentifier = @"cell";
 
 - (void)show
 {
-    
+    self.transform = CGAffineTransformTranslate(self.transform, 0, - self.frame.size.height);
+    [UIView animateWithDuration:0.5 animations:^(void) {
+        self.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL isFinished) {
+        [self customInterface];
+    }];
 }
 
 - (void)hide
 {
     [UIView animateWithDuration:0.5 animations:^(void) {
-        self.transform = CGAffineTransformScale(self.transform, 0, 0);
+        self.transform = CGAffineTransformTranslate(self.transform, 0, - self.frame.size.height);
         self.mask.alpha = 0;
     } completion:^(BOOL isFinished) {
         [self.mask removeFromSuperview];
@@ -238,4 +247,21 @@ NSString *const SZCalendarCellIdentifier = @"cell";
     }];
 }
 
+
+- (void)addSwipe
+{
+    UISwipeGestureRecognizer *swipLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(nexAction:)];
+    swipLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self addGestureRecognizer:swipLeft];
+    
+    UISwipeGestureRecognizer *swipRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(previouseAction:)];
+    swipRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self addGestureRecognizer:swipRight];
+}
+
+- (void)addTap
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)];
+    [self.mask addGestureRecognizer:tap];
+}
 @end

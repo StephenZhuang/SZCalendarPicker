@@ -89,6 +89,8 @@
             <connections>
                 <outlet property="collectionView" destination="12B-hj-KRW" id="BLx-6U-nhc"/>
                 <outlet property="monthLabel" destination="83Z-gf-543" id="Gnp-qX-eRd"/>
+                <outlet property="nextButton" destination="3g3-vC-teX" id="JSz-G7-5gQ"/>
+                <outlet property="previousButton" destination="vTP-FC-Txp" id="gzU-pj-uSr"/>
             </connections>
         </view>
     </objects>
