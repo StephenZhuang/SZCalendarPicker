@@ -57,7 +57,7 @@ NSString *const SZCalendarCellIdentifier = @"cell";
 - (void)setDate:(NSDate *)date
 {
     _date = date;
-    [_monthLabel setText:[NSString stringWithFormat:@"%0d-%i",[self month:date],[self year:date]]];
+    [_monthLabel setText:[NSString stringWithFormat:@"%.2d-%i",[self month:date],[self year:date]]];
     [_collectionView reloadData];
 }
 
