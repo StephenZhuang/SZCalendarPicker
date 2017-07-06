@@ -35,6 +35,7 @@ NSString *const SZCalendarCellIdentifier = @"cell";
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [_collectionView registerClass:[SZCalendarCell class] forCellWithReuseIdentifier:SZCalendarCellIdentifier];
      _weekDayArray = @[@"日",@"一",@"二",@"三",@"四",@"五",@"六"];
 }
@@ -57,7 +58,7 @@ NSString *const SZCalendarCellIdentifier = @"cell";
 - (void)setDate:(NSDate *)date
 {
     _date = date;
-    [_monthLabel setText:[NSString stringWithFormat:@"%.2d-%i",[self month:date],[self year:date]]];
+    [_monthLabel setText:[NSString stringWithFormat:@"%.2ld-%li",(long)[self month:date],(long)[self year:date]]];
     [_collectionView reloadData];
 }
 
@@ -151,7 +152,7 @@ NSString *const SZCalendarCellIdentifier = @"cell";
             [cell.dateLabel setText:@""];
         }else{
             day = i - firstWeekday + 1;
-            [cell.dateLabel setText:[NSString stringWithFormat:@"%i",day]];
+            [cell.dateLabel setText:[NSString stringWithFormat:@"%li",(long)day]];
             [cell.dateLabel setTextColor:[UIColor colorWithHexString:@"#6f6f6f"]];
             
             //this month
@@ -196,6 +197,10 @@ NSString *const SZCalendarCellIdentifier = @"cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    //点击选中的效果
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
     NSDateComponents *comp = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self.date];
     NSInteger firstWeekday = [self firstWeekdayInThisMonth:_date];
     
@@ -236,7 +241,10 @@ NSString *const SZCalendarCellIdentifier = @"cell";
 
 - (void)show
 {
-    self.transform = CGAffineTransformTranslate(self.transform, 0, - self.frame.size.height);
+    //提前布局
+    [self customInterface];
+    
+    self.transform = CGAffineTransformTranslate(self.transform, 0, -CGRectGetMaxY(self.frame));
     [UIView animateWithDuration:0.5 animations:^(void) {
         self.transform = CGAffineTransformIdentity;
     } completion:^(BOOL isFinished) {
@@ -247,7 +255,7 @@ NSString *const SZCalendarCellIdentifier = @"cell";
 - (void)hide
 {
     [UIView animateWithDuration:0.5 animations:^(void) {
-        self.transform = CGAffineTransformTranslate(self.transform, 0, - self.frame.size.height);
+        self.transform = CGAffineTransformTranslate(self.transform, 0, -CGRectGetMaxY(self.frame));
         self.mask.alpha = 0;
     } completion:^(BOOL isFinished) {
         [self.mask removeFromSuperview];
